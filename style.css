@@ -33,6 +33,41 @@ body{
   line-height: 1.55;
 }
 
+.bg-orbs{
+  position: fixed;
+  inset: -20vh -20vw;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(26px);
+  opacity: 0.95;
+}
+.orb{
+  position: absolute;
+  width: clamp(260px, 30vw, 520px);
+  height: clamp(260px, 30vw, 520px);
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 55%),
+    radial-gradient(circle at 60% 60%, rgba(249,115,22,0.65), transparent 62%),
+    radial-gradient(circle at 70% 40%, rgba(251,146,60,0.45), transparent 58%);
+  mix-blend-mode: screen;
+  animation: floaty 16s ease-in-out infinite;
+}
+.orb.o1{ left: 6%; top: 6%; }
+.orb.o2{ right: 6%; top: 10%; animation-duration: 18s; }
+.orb.o3{ left: 14%; bottom: 10%; animation-duration: 20s; }
+.orb.o4{
+  right: 18%;
+  bottom: 6%;
+  width: clamp(220px, 24vw, 420px);
+  height: clamp(220px, 24vw, 420px);
+  animation-duration: 22s;
+}
+@keyframes floaty{
+  0%{ transform: translate3d(0,0,0) scale(1); }
+  50%{ transform: translate3d(26px,-22px,0) scale(1.03); }
+  100%{ transform: translate3d(0,0,0) scale(1); }
+}
+
 a{ color: inherit; text-decoration: none; }
 a:focus-visible,
 button:focus-visible,
@@ -205,12 +240,35 @@ input:focus-visible{
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.78rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.badge{
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(249,115,22,0.16);
+  border: 1px solid rgba(249,115,22,0.28);
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.06em;
+  font-weight: 750;
+  font-size: 0.72rem;
+  text-transform: none;
 }
 .headline{
   margin: 0 0 0.75rem;
   font-size: clamp(2.2rem, 1.8rem + 2.5vw, 3.35rem);
   line-height: 1.04;
   letter-spacing: -0.03em;
+}
+.grad{
+  background: linear-gradient(135deg, rgba(249,115,22,1), rgba(251,146,60,0.92), rgba(255,255,255,0.92));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .subhead{
   margin: 0 0 1.2rem;
@@ -246,6 +304,15 @@ input:focus-visible{
 .button.ghost{
   background: transparent;
   border-color: rgba(249,115,22,0.35);
+}
+.button.subtle{
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.86);
+}
+.button .icon{
+  margin-left: 0.45rem;
+  opacity: 0.92;
 }
 .quick-info{
   display: flex;
@@ -358,6 +425,7 @@ input:focus-visible{
 @media (min-width: 980px){
   .grid.three{ grid-template-columns: repeat(3, 1fr); }
 }
+.grid.three .card{ height: 100%; }
 
 .card{
   border-radius: var(--radius);
