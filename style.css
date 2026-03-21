@@ -767,3 +767,12 @@ textarea:focus-visible{
   height: 100%;
   object-fit: cover;
 }
+.button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}

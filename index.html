@@ -11,6 +11,20 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
+  <script>
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 150;
+
+    if (top > offset) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
   <body>
     <a class="skip-link" href="#home">Skip to content</a>
     <div class="bg-orbs" aria-hidden="true">
@@ -38,6 +52,9 @@
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#contact" class="nav-cta">Contact</a>
+          <a class="button ghost" href=""D:\A Durga Bhavani.pdf"" download>
+  Download Resume
+</a>
         </nav>
       </div>
     </header>
@@ -143,8 +160,11 @@
               <p class="mini-title">Hobbies</p>
               <ul class="tags">
                 <li>Reading books</li>
-                <li>Watching movies</li>
+                <li>Watching series and movies </li>
                 <li>Learning new things</li>
+                <li>Learning a new language</li>
+                 <li>Volunteering at social services </li>
+
               </ul>
               <p class="mini-title" style="margin-top: 0.9rem;">Languages</p>
               <ul class="tags">
@@ -262,6 +282,10 @@
                 <li>Integrated a MySQL database for storing and managing user health data.</li>
                 <li>Used Git and GitHub for version control and collaboration.</li>
               </ul>
+              <div style="margin-top:10px;">
+  <a href="https://your-live-link.com" target="_blank">🔗 Live</a>
+  <a href="https://github.com/your-github-link" target="_blank">💻 GitHub</a>
+</div>
             </article>
 
             <article class="card project">
@@ -276,6 +300,10 @@
                 <li>Implemented REST APIs, authentication, and role‑based dashboards.</li>
                 <li>Integrated MySQL for service bookings and user management.</li>
               </ul>
+              <div style="margin-top:10px;">
+  <a href=https://proconnect-frontend-six.vercel.app/" target="_blank">🔗 Live</a>
+  <a href="https://github.com/Durgabhavani0707/proconnect" target="_blank">💻 GitHub</a>
+</div>
             </article>
           </div>
         </div>
@@ -304,6 +332,7 @@
               <li>Supported awareness activities to promote better health habits in the community.</li>
               <li>Collaborated with mentors and peers to organize and manage wellness programs.</li>
             </ul>
+            
           </article>
 
           <h3 class="contact-mini-title">Contact</h3>
@@ -392,6 +421,14 @@
                   <span class="contact-val">github.com/Durgabhavani0707</span>
                 </a>
               </div>
+              <section class="section">
+  <div class="container">
+    <h2>Why Hire Me?</h2>
+    <p>
+      I am a quick learner, passionate developer, and I continuously improve my skills by building real-world projects.
+    </p>
+  </div>
+</section>
             </article>
           </div>
         </div>
